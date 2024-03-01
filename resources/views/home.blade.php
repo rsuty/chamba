@@ -1,6 +1,11 @@
-<h1>Adalberto</h1>
-
-<form method="post" action="{{ route('logout') }}">
-    @csrf
-    <button class="" type="submit">Logout</button>
-</form>
+@extends('layouts.master')
+@section('title')
+    HOME
+@endsection
+@section('css')
+@endsection
+@section('content')
+    <div class="row">
+        <h1>Adalberto</h1>
+    </div>
+@endsection

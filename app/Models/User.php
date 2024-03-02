@@ -48,4 +48,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function isWorker(): bool
+    {
+        return $this->type === 1;
+    }
 }

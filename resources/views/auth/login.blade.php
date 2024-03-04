@@ -135,15 +135,12 @@
                     </div>
                     <div
                         class="mx-auto font-normal text-slate-500 dark:text-slate-400 2xl:mt-12 mt-6 uppercase text-sm text-center">
-                        Already registered?
-                        <a href="signup-one.html" class="text-slate-900 dark:text-white font-medium hover:underline">
-                            Sign In
+                        Don't have you account?
+                        <a href="/register" class="text-slate-900 dark:text-white font-medium hover:underline">
+                            Sign Up
                         </a>
                     </div>
                 </div>
-            </div>
-            <div class="auth-footer3 text-white py-5 px-5 text-xl w-full">
-                Unlock your Project performance
             </div>
         </div>
     </div>

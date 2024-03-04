@@ -55,7 +55,7 @@
                             </a>
                         </div>
                         <div class="text-center 2xl:mb-10 mb-4">
-                            <h4 class="font-medium">Sign in</h4>
+                            <h4 class="font-medium">Sign Up</h4>
                             <div class="text-slate-500 text-base">
                                 Sign in to your account to start using Dashcode
                             </div>
@@ -149,7 +149,7 @@
                             class="md:max-w-[345px] mx-auto font-normal text-slate-500 dark:text-slate-400 mt-8 uppercase text-sm">
                             <span>ALREADY REGISTERED?
                             </span>
-                            <a href="signin-one.html"
+                            <a href="/login"
                                 class="text-slate-900 dark:text-white font-medium hover:underline">
                                 Sign In
                             </a>

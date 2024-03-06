@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('chamba', function (Blueprint $table) {
+        Schema::create('chambas', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo');
+            $table->string('title');
             $table->longText('description');
             $table->float('rating')->default(0.0);
-            $table->enum('job', ['Albanil', 'Plomero', 'Carpintero']);
+            $table->foreignId('job_id')->constrained('jobs');
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class ImagesChamba extends Model
 {
     use HasFactory;
+    protected $fillable = ['filename'];
+
+    public function post()
+    {
+        return $this->belongsTo(Chamba::class);
+    }
 }

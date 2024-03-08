@@ -25,11 +25,12 @@
                 </div>
             @endif
             <div class="card-text h-full space-y-4">
-                <form action="{{route("chamba.store")}}" method="post">
+                <form action="{{route("chamba.store")}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="input-area">
                         <label for="name" class="form-label">Titulo</label>
-                        <input id="title" name="title" type="text" class="form-control" placeholder="Nombre de tu chamba">
+                        <input id="title" name="title" type="text" class="form-control"
+                               placeholder="Nombre de tu chamba">
                     </div>
                     <div class="input-area">
                         <label for="description" class="form-label">Descripcion de tu chamba</label>
@@ -45,7 +46,11 @@
                         </select>
                     </div>
                     <div class="input-area">
-                        <input value="{{auth()->user()->id}}" name="user_id" />
+                        <label for="images">Images</label>
+                        <input type="file" id="images" name="images[]" multiple accept="image/*" />
+                    </div>
+                    <div class="input-area">
+                        <input value="{{auth()->user()->id}}" name="user_id"/>
                     </div>
                     <div>
                         <button type="submit" class="btn btn-primary">Publicar</button>

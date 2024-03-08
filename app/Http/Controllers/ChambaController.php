@@ -17,13 +17,19 @@ class ChambaController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            "title" => "required|max:255",
-            "description" => "required",
-            "trabajo_id" => "required|numeric",
-            "user_id" => "required|numeric"
-        ]);
-        Chamba::create($validatedData);
-        return redirect()->back()->with("success", "Chamba creada con éxito");
+        $chamba = new Chamba();
+        $chamba->title = $request->title;
+        $chamba->description = $request->description;
+        $chamba->trabajo_id = $request->trabajo_id;
+        $chamba->user_id = $request->user_id;
+        $chamba->save();
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $filename = $image->store('images');
+                $chamba->images()->create(['filename' => $filename]);
+            }
+        }
+        return redirect()->route('chamba.create');
     }
 }

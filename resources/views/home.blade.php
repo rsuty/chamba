@@ -6,7 +6,7 @@
 @endsection
 @section('content')
     @worker
-        <h1>Tilin</h1>
+        <a href="{{route("chamba.create")}}" class="btn inline-flex justify-center btn-success">Publicar trabajo</a>
     @endworker
     <div class="row">
         <h1>Adalberto</h1>

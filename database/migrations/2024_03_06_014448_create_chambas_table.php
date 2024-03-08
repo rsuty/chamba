@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->longText('description');
             $table->float('rating')->default(0.0);
-            $table->foreignId('job_id')->constrained('jobs');
+            $table->foreignId('trabajo_id')->constrained('trabajos');
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });

@@ -3,9 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\Job;
+use App\Models\Trabajo;
 use Illuminate\Database\Seeder;
 
-class JobSeeder extends Seeder
+class TrabajoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +16,7 @@ class JobSeeder extends Seeder
         $jsonFilePath = file_get_contents('database/seeders/json/jobs.json');
         $jobs = json_decode($jsonFilePath, true);
         foreach ($jobs as $job) {
-            Job::create([
+            Trabajo::create([
                 'name' => $job['name'],
             ]);
         }

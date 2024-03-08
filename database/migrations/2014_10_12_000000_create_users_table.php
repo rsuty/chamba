@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->float('rating')->default(0);
             $table->string('phone_number')->nullable();
-            $table->smallInteger('type')->default(0);
+            $table->smallInteger('role')->default(0);
             $table->string('speciality')->nullable();
             $table->string('street')->nullable();
             $table->string('postal_code')->nullable();

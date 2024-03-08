@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ChambaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,4 +28,9 @@ Route::group(['prefix' => 'profile', 'middleware' => 'auth'], function () {
 
 Route::group(['prefix' => 'plans', 'middleware' => 'auth'], function () {
     Route::get('/', [PlanController::class, 'index'])->name('plan.index');
+});
+
+Route::group(['prefix' => 'chamba', 'middleware' => 'auth'], function () {
+    Route::get('/', [ChambaController::class, 'create'])->name('chamba.create');
+    Route::post('/store', [ChambaController::class, 'store'])->name('chamba.store');
 });

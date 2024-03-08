@@ -11,7 +11,7 @@ class ChambaController extends Controller
     //
     public function show($id)
     {
-        $chamba = Chamba::find($id);
+        $chamba = Chamba::where('id' , $id)->firstOrFail();
         return view("chamba.show", ["chamba" => $chamba]);
     }
 

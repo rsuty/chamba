@@ -15,8 +15,12 @@
                     <div class="card-body flex flex-col p-6 active">
                         <header class="flex mb-5 items-center">
                             <div class="flex-1">
-                                <div
-                                    class="card-title font-Inter text-slate-900 dark:text-white">{{$chamba->title}}</div>
+                                <div class="card-title font-Inter text-slate-900 dark:text-white">
+                                    <a href="{{route("chamba.show", $chamba->id)}}"
+                                       class="">
+                                        {{$chamba->title}}
+                                    </a>
+                                </div>
                             </div>
                         </header>
                         <div class="image-box mb-6">

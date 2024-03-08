@@ -37,5 +37,5 @@ Route::group(['prefix' => 'plans', 'middleware' => 'auth'], function () {
 Route::group(['prefix' => 'chamba', 'middleware' => 'auth'], function () {
     Route::get('/', [ChambaController::class, 'create'])->name('chamba.create');
     Route::post('/store', [ChambaController::class, 'store'])->name('chamba.store');
-    Route::get('/{id}', [ChambaController::class . 'show'])->name('chamba.show');
+    Route::get('/{id}', [ChambaController::class, 'show'])->name('chamba.show');
 });

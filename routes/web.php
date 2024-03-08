@@ -17,7 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $chambas = \App\Models\Chamba::all();
+    $images = \App\Models\ImagesChamba::all();
+    $trabajos = \App\Models\Trabajo::all();
+    $user = \App\Models\User::all();
+    return view('home', ["chambas" => $chambas, "images" => $images, "trabajos" => $trabajos, "user" => $user]);
 })->middleware('auth');
 
 Route::group(['prefix' => 'profile', 'middleware' => 'auth'], function () {
@@ -33,4 +37,5 @@ Route::group(['prefix' => 'plans', 'middleware' => 'auth'], function () {
 Route::group(['prefix' => 'chamba', 'middleware' => 'auth'], function () {
     Route::get('/', [ChambaController::class, 'create'])->name('chamba.create');
     Route::post('/store', [ChambaController::class, 'store'])->name('chamba.store');
+    Route::get('/{id}', [ChambaController::class . 'show'])->name('chamba.show');
 });

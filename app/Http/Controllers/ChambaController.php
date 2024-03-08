@@ -9,6 +9,12 @@ use Illuminate\Http\Request;
 class ChambaController extends Controller
 {
     //
+    public function show($id)
+    {
+        $chamba = Chamba::find($id);
+        return view("chamba.show", ["chamba" => $chamba]);
+    }
+
     public function create()
     {
         $trabajos = Trabajo::all();
@@ -26,7 +32,7 @@ class ChambaController extends Controller
 
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
-                $filename = $image->store('images');
+                $filename = $image->move('images', $image->getClientOriginalName());
                 $chamba->images()->create(['filename' => $filename]);
             }
         }

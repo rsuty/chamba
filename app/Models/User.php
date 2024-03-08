@@ -48,7 +48,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-
+    public function chambas()
+    {
+        return $this->hasMany(Chamba::class);
+    }
     public function isWorker(): bool
     {
         return $this->role === 1;

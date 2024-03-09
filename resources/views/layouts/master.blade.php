@@ -5,10 +5,9 @@
     <meta charset="utf-8" />
     <title>@yield('title') | Chamba [DASC]</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Chamba" name="description" />
-    <meta content="Chamba" name="author" />
+    <meta content="Chamba" name="description"/>
+    <meta content="Chamba" name="author"/>
     @include('layouts.head-css')
-    <script src="assets/js/store.js"></script>
 </head>
 
 @section('body')

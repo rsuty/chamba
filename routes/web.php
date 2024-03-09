@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PlanController;
+use App\Http\Controllers\RequestChambaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ChambaController;
 use Illuminate\Support\Facades\Route;
@@ -38,4 +39,8 @@ Route::group(['prefix' => 'chamba', 'middleware' => 'auth'], function () {
     Route::get('/', [ChambaController::class, 'create'])->name('chamba.create');
     Route::post('/store', [ChambaController::class, 'store'])->name('chamba.store');
     Route::get('/{id}', [ChambaController::class, 'show'])->name('chamba.show');
+});
+
+Route::group(['prefix' => 'request', 'middleware' => 'auth'], function() {
+    Route::post('/store', [RequestChambaController::class, 'store'])->name('request.store');
 });

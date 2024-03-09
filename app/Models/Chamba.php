@@ -19,4 +19,8 @@ class Chamba extends Model
     {
         return $this->hasMany(ImagesChamba::class);
     }
+    public function requests()
+    {
+        return $this->hasMany(RequestChamba::class);
+    }
 }

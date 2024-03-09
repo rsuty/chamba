@@ -28,7 +28,7 @@
 
     <div class="loginwrapper">
         <div class="lg-inner-column">
-            <div class="left-column relative z-[1] bg-cover" style="background-image: url({{asset('images/img_prueba6.png')}})">
+            <div class="left-column relative z-[1] bg-cover" style="background-image: url({{asset('assets/images/img_prueba6.png')}})">
                 
             </div>
             <div class="right-column  relative">

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <title>Dashcode - HTML Template</title>
-    <link rel="icon" type="image/png" href="assets/images/logo/favicon.svg">
+    <title>Registrar cuenta</title>
+    <link rel="icon" type="image/png" href="assets/images/logo/logo-bg-white.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap"
@@ -28,22 +28,8 @@
 
     <div class="loginwrapper">
         <div class="lg-inner-column">
-            <div class="left-column relative z-[1]">
-                <div class="max-w-[520px] pt-20 ltr:pl-20 rtl:pr-20">
-                    <a href="index.html">
-                        <img src="assets/images/logo/logo.svg" alt="" class="mb-10 dark_logo">
-                        <img src="assets/images/logo/logo-white.svg" alt="" class="mb-10 white_logo">
-                    </a>
-                    <h4>
-                        Unlock your Project
-                        <span class="text-slate-800 dark:text-slate-400 font-bold">
-                            performance
-                        </span>
-                    </h4>
-                </div>
-                <div class="absolute left-0 2xl:bottom-[-160px] bottom-[-130px] h-full w-full z-[-1]">
-                    <img src="assets/images/auth/ils1.svg" alt="" class=" h-full w-full object-contain">
-                </div>
+            <div class="left-column relative z-[1] bg-cover" style="background-image: url({{asset('images/img_prueba6.png')}})">
+                
             </div>
             <div class="right-column  relative">
                 <div class="inner-content h-full flex flex-col bg-white dark:bg-slate-800">
@@ -55,9 +41,9 @@
                             </a>
                         </div>
                         <div class="text-center 2xl:mb-10 mb-4">
-                            <h4 class="font-medium">Sign Up</h4>
+                            <h4 class="font-medium">Registrar cuenta</h4>
                             <div class="text-slate-500 text-base">
-                                Sign in to your account to start using Dashcode
+                                Registra una cuenta para comenzar a usar Chamba
                             </div>
                         </div>
                         <!-- BEGIN: Registration Form -->
@@ -74,7 +60,7 @@
                         <form method="post" class="space-y-4" action="{{ route('register') }}">
                             @csrf
                             <div class="fromGroup">
-                                <label class="block capitalize form-label">Name</label>
+                                <label class="block capitalize form-label">Nombre</label>
                                 <div class="relative ">
                                     <input type="text" name="name" class="  form-control py-2"
                                         placeholder="Enter your name">
@@ -85,33 +71,32 @@
                                 </div>
                             </div>
                             <div class="fromGroup">
-                                <label class="block capitalize form-label">email</label>
+                                <label class="block capitalize form-label">Correo electrónico</label>
                                 <div class="relative ">
                                     <input type="email" name="email" class="form-control py-2"
                                         placeholder="Enter your email">
                                 </div>
                             </div>
                             <div class="fromGroup">
-                                <label class="block capitalize form-label">passwrod</label>
+                                <label class="block capitalize form-label">Contraseña</label>
                                 <div class="relative "><input type="password" name="password"
                                         class="  form-control py-2" placeholder="Enter your password">
                                 </div>
                             </div>
                             <div class="fromGroup">
-                                <label class="block capitalize form-label">password confirmation</label>
+                                <label class="block capitalize form-label">Confirmar contraseña</label>
                                 <div class="relative "><input type="password" name="password_confirmation"
                                         class="  form-control py-2" placeholder="Enter your password">
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-dark block w-full text-center">Create an
-                                account</button>
+                            <button type="submit" class="btn btn-dark block w-full text-center">Crear cuenta</button>
                         </form>
                         <!-- END: Registration Form -->
                         <div class="relative border-b-[#9AA2AF] border-opacity-[16%] border-b pt-6">
                             <div
                                 class="absolute inline-block bg-white dark:bg-slate-800 dark:text-slate-400 left-1/2 top-1/2 transform -translate-x-1/2
                                     px-4 min-w-max text-sm text-slate-500 font-normal">
-                                Or continue with
+                               O continuar con
                             </div>
                         </div>
                         <div class="max-w-[242px] mx-auto mt-8 w-full">
@@ -147,16 +132,13 @@
                         </div>
                         <div
                             class="md:max-w-[345px] mx-auto font-normal text-slate-500 dark:text-slate-400 mt-8 uppercase text-sm">
-                            <span>ALREADY REGISTERED?
+                            <span>Ya está registrado?
                             </span>
                             <a href="/login"
                                 class="text-slate-900 dark:text-white font-medium hover:underline">
-                                Sign In
+                                Iniciar sesión
                             </a>
                         </div>
-                    </div>
-                    <div class="auth-footer text-center">
-                        Copyright 2021, Dashcode All Rights Reserved.
                     </div>
                 </div>
             </div>

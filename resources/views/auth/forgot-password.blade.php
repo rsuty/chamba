@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <title>Dashcode - HTML Template</title>
-    <link rel="icon" type="image/png" href="assets/images/logo/favicon.svg">
+    <title>Recuperar contraseña</title>
+    <link rel="icon" type="image/png" href="assets/images/logo/logo-bg-white.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap"
@@ -49,7 +49,7 @@
                         <div
                             class="font-normal text-base text-slate-500 dark:text-slate-400 text-center px-2 bg-slate-100 dark:bg-slate-600 rounded
                                 py-3 mb-4 mt-10">
-                            Ingresa tu contraseña y se te enviaran las intrucciones!
+                            Ingresa tu correo electrónico y se te enviaran las intrucciones!
                         </div>
                         <!-- BEGIN: Forgot Password Form -->
                         @if (session('status'))

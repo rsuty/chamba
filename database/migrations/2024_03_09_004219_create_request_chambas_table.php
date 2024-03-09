@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('request_chamba', function (Blueprint $table) {
+        Schema::create('request_chambas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('chamba_id')->constrained()->onDelete('cascade');

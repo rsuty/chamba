@@ -18,27 +18,31 @@
 </head>
 
 <body class=" font-inter skin-default">
-    <!-- [if IE]> <p class="browserupgrade">
-            You are using an <strong>outdated</strong> browser. Please
-            <a href="https://browsehappy.com/">upgrade your browser</a> to improve
-            your experience and security.
-        </p> <![endif] -->
-
-    <!-- <div class="loginwrapper bg-cover bg-no-repeat bg-center" style="background-image: url(assets/images/all-img/page-bg.png);"> -->
-    <div class="loginwrapper bg-cover bg-no-repeat bg-center" style="background-color: #98C379;">
+    <div class="loginwrapper bg-cover bg-no-repeat bg-center">
         <div class="lg-inner-column">
             <div class="left-columns lg:w-1/2 lg:block hidden">
-                <div class="logo-box-3 bg-white bg-center bg-no-repeat">
-                    <a heref="index.html" class="">
-                    <img src="assets/images/logo/logo-obscuro.svg" alt="" style="padding: 10px;" class="dark_logo bg-white rounded-lg">
-                    </a>
+                <div class="logo-box-3 bg-center bg-no-repeat">
+                    <span class="xl:inline-block hidden">
+                        <img src="{{ asset('assets/images/logo/logo-obscuro-mobile.svg') }}" class="black_logo"
+                            alt="logo">
+                        <img src="{{ asset('assets/images/logo/logo-claro-mobile.svg') }}" class="white_logo"
+                            alt="logo">
+                    </span>
+                    <span class="xl:hidden inline-block">
+                        <img src="{{ asset('assets/images/logo/logo-obscuro-mobile.svg') }}" class="black_logo"
+                            alt="logo">
+                        <img src="{{ asset('assets/images/logo/logo-claro-mobile.svg') }}" class="white_logo"
+                            alt="logo">
+                    </span>
+
                 </div>
             </div>
-            <div class="lg:w-1/2 w-full flex flex-col items-center justify-center ">
+            <div class="lg:w-1/2 w-full flex flex-col items-center justify-center" style="background-color: #8abd7a">
                 <div class="auth-box-3">
                     <div class="mobile-logo mx-auto my-auto mb-6 lg:hidden block">
                         <a href="index.html">
                             <img src="assets/images/logo/logo-obscuro.svg" alt="" class="mb-6 dark_logo">
+                            <img src="assets/images/logo/logo-claro-mobile.svg" alt="" class="mb-6 white_logo">
                         </a>
                     </div>
 

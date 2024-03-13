@@ -27,7 +27,7 @@ class ChambaController extends Controller
         $chamba->title = $request->title;
         $chamba->description = $request->description;
         $chamba->trabajo_id = $request->trabajo_id;
-        $chamba->user_id = $request->user_id;
+        $chamba->worker_id = $request->worker_id;
         $chamba->save();
 
         if ($request->hasFile('images')) {

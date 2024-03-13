@@ -24,5 +24,8 @@ class AppServiceProvider extends ServiceProvider
         Blade::if('worker', function () {
             return auth()->check() && auth()->user()->isWorker();
         });
+        Blade::if('client', function () {
+            return auth()->check() && auth()->user()->isClient();
+        });
     }
 }

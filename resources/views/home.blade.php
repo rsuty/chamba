@@ -9,6 +9,7 @@
     <a href="{{route("chamba.create")}}" class="btn inline-flex justify-center btn-success">Publicar trabajo</a>
     @endworker
     <div class="row">
+        @client
         <div class="grid grid-cols-3 gap-4">
             @foreach($chambas as $chamba)
                 <div class="card rounded-md bg-white dark:bg-slate-800 lg:h-full  shadow-base">
@@ -45,5 +46,6 @@
                 </div>
             @endforeach
         </div>
+        @endclient
     </div>
 @endsection

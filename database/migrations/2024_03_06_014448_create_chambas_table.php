@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -17,7 +16,7 @@ return new class extends Migration
             $table->longText('description');
             $table->float('rating')->default(0.0);
             $table->foreignId('trabajo_id')->constrained('trabajos');
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('worker_id')->constrained("users")->onDelete("cascade");
             $table->timestamps();
         });
     }

@@ -56,4 +56,8 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->role === 1;
     }
+    public function isClient(): bool
+    {
+        return $this->role === 0;
+    }
 }

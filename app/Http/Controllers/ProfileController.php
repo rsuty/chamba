@@ -12,7 +12,7 @@ class ProfileController extends Controller
     {
         $id = Auth::user()->id;
         $info = User::find($id);
-        return view("profile.index", compact("info"));
+        return view("auth.profile", compact("info"));
     }
     public function update(Request $request, $id)
     {

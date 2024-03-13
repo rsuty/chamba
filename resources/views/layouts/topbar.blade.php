@@ -15,8 +15,10 @@
                     <iconify-icon icon="ph:arrow-right-bold"></iconify-icon>
                 </button>
                 <a href="#" class="xl:inline-block hidden mb-1">
-                    <img src="{{ asset('assets/images/logo/logo-obscuro-mobile.svg') }}" class="black_logo" alt="logo">
-                    <img src="{{ asset('assets/images/logo/logo-claro-mobile.svg') }}" class="white_logo" alt="logo">
+                    <img src="{{ asset('assets/images/logo/logo-obscuro-mobile.svg') }}" class="black_logo"
+                        alt="logo">
+                    <img src="{{ asset('assets/images/logo/logo-claro-mobile.svg') }}" class="white_logo"
+                        alt="logo">
                 </a>
                 <button
                     class="flex items-center xl:text-sm text-lg xl:text-slate-400 text-slate-800 dark:text-slate-300 focus:outline-none focus:shadow-none px-1 space-x-3
@@ -75,14 +77,6 @@
                 <!-- END: TOggle Theme -->
 
                 <!-- BEGIN: grayscal -->
-                <div>
-                    <button id="grayScale"
-                        class="lg:h-[32px] lg:w-[32px] lg:bg-slate-100 lg:dark:bg-slate-900 dark:text-white text-slate-900 cursor-pointer
-            rounded-full text-[20px] flex flex-col items-center justify-center">
-                        <iconify-icon class="text-slate-800 dark:text-white text-xl"
-                            icon="mdi:paint-outline"></iconify-icon>
-                    </button>
-                </div>
                 <!-- END: grayscal -->
 
                 <!-- BEGIN: Message Dropdown -->
@@ -350,6 +344,13 @@
                         class="dropdown-menu z-10 hidden bg-white divide-y divide-slate-100 shadow w-44 dark:bg-slate-800 border dark:border-slate-700 !top-[23px] rounded-md
       overflow-hidden">
                         <ul class="py-1 text-sm text-slate-800 dark:text-slate-200">
+                            <li>
+                                <iconify-icon icon="heroicons-outline:user-circle"
+                                    class="relative top-[2px] text-lg ltr:mr-1 rtl:ml-1"></iconify-icon>
+                                <a href="{{route('profile.index')}}">
+                                    <span class="font-Inter">Profile</span>
+                                </a>
+                            </li>
                             <li>
                                 <form action="{{ route('logout') }}" method="post">
                                     @csrf

@@ -9,7 +9,8 @@ class RequestChamba extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["user_id", "chamba_id"];
+    protected $fillable = ["worker_id", "client_id", "chamba_id"];
+
     public function chambas()
     {
         return $this->belongsTo(Chamba::class);

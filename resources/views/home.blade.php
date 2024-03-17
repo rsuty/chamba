@@ -39,7 +39,7 @@
                                 <a href="card.html"
                                    class="underline btn-link active"> {{$trabajos[$chamba->trabajo_id-1]->name}} </a>
                                 <a href="card.html"
-                                   class="underline btn-link active">{{$user[$chamba->user_id-1]->name}}</a>
+                                   class="underline btn-link active">{{$user[$chamba->worker_id-1]->name}}</a>
                             </div>
                         </div>
                     </div>

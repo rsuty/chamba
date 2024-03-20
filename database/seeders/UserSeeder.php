@@ -28,5 +28,11 @@ class UserSeeder extends Seeder
             'password' => Hash::make('client'),
             'phone_number' => '6121224123',
         ]);
+        DB::table('users')->insert([
+            'name' => 'nata',
+            'email' => 'nata@ct.com',
+            'password' => Hash::make('nata'),
+            'phone_number' => '6121224124',
+        ]);
     }
 }

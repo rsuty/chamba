@@ -2,7 +2,7 @@
     <div class="z-[999]">
         <div class="flex justify-between items-center h-full">
             <div class="flex items-center md:space-x-4 space-x-4 rtl:space-x-reverse vertical-box">
-                <a href="#" class="mobile-logo xl:hidden inline-block">
+                <a href="/" class="mobile-logo xl:hidden inline-block">
                     <img src="{{ asset('assets/images/logo/logo-obscuro-mobile.svg') }}" class="black_logo" alt="logo">
                     <img src="{{ asset('assets/images/logo/logo-claro-mobile.svg') }}" class="white_logo" alt="logo">
                 </a>
@@ -14,7 +14,7 @@
                 <button class="sidebarOpenButton text-xl text-slate-900 dark:text-white !ml-0 hidden rtl:rotate-180">
                     <iconify-icon icon="ph:arrow-right-bold"></iconify-icon>
                 </button>
-                <a href="#" class="xl:inline-block hidden mb-1">
+                <a href="/" class="xl:inline-block hidden mb-1">
                     <img src="{{ asset('assets/images/logo/logo-obscuro-mobile.svg') }}" class="black_logo"
                          alt="logo">
                     <img src="{{ asset('assets/images/logo/logo-claro-mobile.svg') }}" class="white_logo"

@@ -44,4 +44,5 @@ Route::group(['prefix' => 'chamba', 'middleware' => 'auth'], function () {
 Route::group(['prefix' => 'request', 'middleware' => 'auth'], function () {
     Route::get('/', [RequestChambaController::class, 'index'])->name('request.index');
     Route::post('/store', [RequestChambaController::class, 'store'])->name('request.store');
+    Route::delete('/{id}/decline', [RequestChambaController::class, 'decline'])->name('request.decline');
 });

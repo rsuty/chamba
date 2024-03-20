@@ -50,9 +50,9 @@
                                         <th scope="col" class="table-th sorting" tabindex="0"
                                             aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                                             style="width: 147.617px;" aria-label="
-                                  Customer
+                                  Cliente
                                 : activate to sort column ascending">
-                                            Customer
+                                            Cliente
                                         </th>
                                         <th scope="col" class="table-th sorting" tabindex="0"
                                             aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
@@ -62,16 +62,16 @@
                                         <th scope="col" class="table-th sorting" tabindex="0"
                                             aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                                             style="width: 105.917px;" aria-label="
-                                  Status
+                                  Estado
                                 : activate to sort column ascending">
-                                            Status
+                                            Estado
                                         </th>
                                         <th scope="col" class="table-th sorting" tabindex="0"
                                             aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                                             style="width: 112.617px;" aria-label="
-                                  Action
+                                  Accion
                                 : activate to sort column ascending">
-                                            Action
+                                            Accion
                                         </th>
                                     </tr>
                                     </thead>
@@ -120,6 +120,9 @@
                                                 @endswitch
                                             </td>
                                             <td class="table-td ">
+                                            <form action="{{route("request.decline", $request->id)}}" method="post">
+                                                @csrf
+                                                @method("delete")
                                                 <div class="flex space-x-3 rtl:space-x-reverse">
                                                     <button class="action-btn" type="button">
                                                         <iconify-icon icon="heroicons:eye"></iconify-icon>
@@ -127,10 +130,11 @@
                                                     <button class="action-btn" type="button">
                                                         <iconify-icon icon="heroicons:pencil-square"></iconify-icon>
                                                     </button>
-                                                    <button class="action-btn" type="button">
-                                                        <iconify-icon icon="heroicons:trash"></iconify-icon>
+                                                    <button class="action-btn" type="submit">
+                                                        <iconify-icon icon="heroicons:x-circle"></iconify-icon>
                                                     </button>
                                                 </div>
+                                            </form>
                                             </td>
                                         </tr>
                                     @endforeach

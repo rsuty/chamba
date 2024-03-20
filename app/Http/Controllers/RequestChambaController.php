@@ -33,4 +33,11 @@ class RequestChambaController extends Controller
         $requestChamba->save();
         return redirect()->back();
     }
+    public function decline($id)
+    {
+        $request = RequestChamba::find($id);
+        $request->status = 'rejected';
+        $request->save();
+        return redirect("/request")->with('success', 'Rejected');
+    }
 }

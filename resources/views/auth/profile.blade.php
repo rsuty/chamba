@@ -124,13 +124,55 @@
                 </div>
             </div>
             <div class="lg:col-span-8 col-span-12">
-                <div class="card ">
-                    <header class="card-header">
-                        <h4 class="card-title">User Overview
-                        </h4>
-                    </header>
-                    <div class="card-body">
-                        <div id="areaChart"></div>
+                <div class="card">
+                    <div class="card-body flex flex-col p-6">
+                        <header
+                            class="flex mb-5 items-center border-b border-slate-100 dark:border-slate-700 pb-5 -mx-6 px-6">
+                            <div class="flex-1">
+                                <div class="card-title text-slate-900 dark:text-white">Default Tabs</div>
+                            </div>
+                        </header>
+                        <div class="card-text h-full ">
+                            <div class="active">
+                                <ul class="nav nav-tabs flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4 menu-open"
+                                    id="tabs-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a href="#tabs-home"
+                                            class="nav-link w-full block font-medium text-sm font-Inter leading-tight capitalize border-x-0 border-t-0 border-b border-transparent px-4 pb-2 my-2 hover:border-transparent focus:border-transparent dark:text-slate-300 active"
+                                            id="tabs-home-tab" data-bs-toggle="pill" data-bs-target="#tabs-home"
+                                            role="tab" aria-controls="tabs-home" aria-selected="true">Resenas</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a href="#tabs-profile"
+                                            class="nav-link w-full block font-medium text-sm font-Inter leading-tight capitalize border-x-0 border-t-0 border-b border-transparent px-4 pb-2 my-2 hover:border-transparent focus:border-transparent dark:text-slate-300"
+                                            id="tabs-profile-tab" data-bs-toggle="pill" data-bs-target="#tabs-profile"
+                                            role="tab" aria-controls="tabs-profile" aria-selected="false">Galeria</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="tabs-tabContent">
+                                    <div class="tab-pane fade active show" id="tabs-home" role="tabpanel"
+                                        aria-labelledby="tabs-home-tab">
+                                        <p class="text-sm text-gray-500 dark:text-gray-200">
+                                            This is some placeholder content the
+                                            <strong>Home</strong>
+                                            tab's associated content. Clicking another tab will toggle the visibility of
+                                            this one for the next. The tab JavaScript swaps classes to control the content
+                                            visibility and styling. consectetur adipisicing elit. Ab ipsa!
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="tabs-profile" role="tabpanel"
+                                        aria-labelledby="tabs-profile-tab">
+                                        <p class="text-sm text-gray-500 dark:text-gray-200">
+                                            This is some placeholder content the
+                                            <strong>Profile</strong>
+                                            tab's associated content. Clicking another tab will toggle the visibility of
+                                            this one for the next. The tab JavaScript swaps classes to control the content
+                                            visibility and styling. consectetur adipisicing elit. Ab ipsa!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

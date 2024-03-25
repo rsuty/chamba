@@ -26,13 +26,19 @@ class RequestChambaController extends Controller
     public function store(Request $request)
     {
         $client_id = Auth::user()->id;
-        $requestChamba = new RequestChamba();
-        $requestChamba->client_id = $client_id;
-        $requestChamba->worker_id = $request->worker_id;
-        $requestChamba->chamba_id = $request->chamba_id;
-        $requestChamba->save();
-        return redirect()->back();
+        $query = RequestChamba::where('client_id', $client_id)->count();
+        if ($query > 0) {
+            return redirect()->back()->with('error', 'You already have a request');
+        } else {
+            $requestChamba = new RequestChamba();
+            $requestChamba->client_id = $client_id;
+            $requestChamba->worker_id = $request->worker_id;
+            $requestChamba->chamba_id = $request->chamba_id;
+            $requestChamba->save();
+            return redirect()->back()->with('success', 'Request sent');
+        }
     }
+
     public function decline($id)
     {
         $request = RequestChamba::find($id);

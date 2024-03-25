@@ -5,14 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Chamba;
 use App\Models\Trabajo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ChambaController extends Controller
 {
     //
     public function show($id)
     {
-        $chamba = Chamba::where('id' , $id)->firstOrFail();
-        return view("chamba.show", ["chamba" => $chamba]);
+        $chamba = Chamba::where('id', $id)->firstOrFail();
+        $info = DB::table('chambas as c')
+            ->join('users as worker', 'c.worker_id', '=', 'worker.id')
+            ->join('trabajos as trabajo', 'c.trabajo_id', '=', 'trabajo.id')
+            ->select('c.*', 'worker.name as worker_name', 'trabajo.name as trabajo_name')
+            ->get();
+                return view("chamba.show", ["info" => $info, "chamba" => $chamba]);
     }
 
     public function create()

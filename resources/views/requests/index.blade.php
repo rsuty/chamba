@@ -19,8 +19,8 @@
                             <div class="grid grid-cols-12 gap-5 px-6 mt-6">
                                 <div class="col-span-4">
                                     <div class="dataTables_length" id="DataTables_Table_0_length"><label>Show <select
-                                                name="DataTables_Table_0_length" aria-controls="DataTables_Table_0"
-                                                class="">
+                                                    name="DataTables_Table_0_length" aria-controls="DataTables_Table_0"
+                                                    class="">
                                                 <option value="10">10</option>
                                                 <option value="25">25</option>
                                                 <option value="50">50</option>
@@ -29,15 +29,15 @@
                                 </div>
                                 <div class="col-span-8 flex justify-end">
                                     <div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input
-                                                type="search" class="" placeholder=""
-                                                aria-controls="DataTables_Table_0"></label></div>
+                                                    type="search" class="" placeholder=""
+                                                    aria-controls="DataTables_Table_0"></label></div>
                                 </div>
                                 <div id="pagination" class="flex items-center"></div>
                             </div>
                             <div class="min-w-full">
                                 <table
-                                    class="min-w-full divide-y divide-slate-100 table-fixed dark:divide-slate-700 data-table dataTable no-footer"
-                                    id="DataTables_Table_0">
+                                        class="min-w-full divide-y divide-slate-100 table-fixed dark:divide-slate-700 data-table dataTable no-footer"
+                                        id="DataTables_Table_0">
                                     <thead class=" bg-slate-200 dark:bg-slate-700">
                                     <tr>
                                         <th scope="col" class="table-th sorting sorting_asc" tabindex="0"
@@ -76,7 +76,7 @@
                                     </tr>
                                     </thead>
                                     <tbody
-                                        class="bg-white divide-y divide-slate-100 dark:bg-slate-800 dark:divide-slate-700">
+                                            class="bg-white divide-y divide-slate-100 dark:bg-slate-800 dark:divide-slate-700">
                                     @foreach($info as $request)
 
                                         <tr>
@@ -88,7 +88,9 @@
                                  class="object-cover w-full h-full rounded-full">
                           </span>
                                   <span class="text-sm text-slate-600 dark:text-slate-300 capitalize">
-                                      {{$request->client_name}}
+                                      <a href="{{route("profile.index", $request->client_id)}}">
+                                          {{$request->client_name}}
+                                      </a>
                                   </span>
                                   </span>
                                             </td>
@@ -101,40 +103,60 @@
                                                 @switch($request->status)
                                                     @case('pending')
                                                         <div
-                                                            class="inline-block px-3 min-w-[90px] text-center mx-auto py-1 rounded-[999px] bg-opacity-25 text-warning-500 bg-warning-500">
+                                                                class="inline-block px-3 min-w-[90px] text-center mx-auto py-1 rounded-[999px] bg-opacity-25 text-warning-500 bg-warning-500">
                                                             Pendiente
                                                         </div>
                                                         @break
                                                     @case('approved')
                                                         <div
-                                                            class="inline-block px-3 min-w-[90px] text-center mx-auto py-1 rounded-[999px] bg-opacity-25 text-success-500 bg-success-500">
+                                                                class="inline-block px-3 min-w-[90px] text-center mx-auto py-1 rounded-[999px] bg-opacity-25 text-success-500 bg-success-500">
                                                             Aprobado
                                                         </div>
                                                         @break
                                                     @case('rejected')
                                                         <div
-                                                            class="inline-block px-3 min-w-[90px] text-center mx-auto py-1 rounded-[999px] bg-opacity-25 text-danger-500 bg-danger-500">
+                                                                class="inline-block px-3 min-w-[90px] text-center mx-auto py-1 rounded-[999px] bg-opacity-25 text-danger-500 bg-danger-500">
                                                             Rechazado
                                                         </div>
                                                         @break
                                                 @endswitch
                                             </td>
                                             <td class="table-td ">
-                                            <form action="{{route("request.decline", $request->id)}}" method="post">
-                                                @csrf
-                                                @method("delete")
-                                                <div class="flex space-x-3 rtl:space-x-reverse">
-                                                    <button class="action-btn" type="button">
-                                                        <iconify-icon icon="heroicons:eye"></iconify-icon>
+                                                <div class="dropdown relative">
+                                                    <button
+                                                            class="btn btn-sm inline-flex justify-center btn-primary items-center"
+                                                            type="button" id="primaryDropdownMenuButton"
+                                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Accion
+                                                        <iconify-icon class="text-xl ltr:ml-2 rtl:mr-2"
+                                                                      icon="ic:round-keyboard-arrow-down"></iconify-icon>
                                                     </button>
-                                                    <button class="action-btn" type="button">
-                                                        <iconify-icon icon="heroicons:pencil-square"></iconify-icon>
-                                                    </button>
-                                                    <button class="action-btn" type="submit">
-                                                        <iconify-icon icon="heroicons:x-circle"></iconify-icon>
-                                                    </button>
+                                                    <ul class="dropdown-menu min-w-max absolute text-sm text-slate-700 dark:text-white hidden bg-white dark:bg-slate-700 shadow z-[2] float-left overflow-hidden list-none text-left rounded-lg mt-1 m-0 bg-clip-padding border-none"
+                                                        style="">
+                                                        <li>
+                                                            <form action="{{route("request.decline", $request->id)}}"
+                                                                  method="post">
+                                                                @csrf
+                                                                @method("PUT")
+                                                                <button type="submit" class="text-slate-600 dark:text-white block
+                                                                font-Inter font-normal px-4 py-2 hover:bg-slate-100
+                                                                dark:hover:bg-slate-600
+                                                                dark:hover:text-white">
+                                                                    <iconify-icon
+                                                                            icon="heroicons:archive-box-x-mark"></iconify-icon>
+
+                                                                    Rechazar
+                                                                </button>
+                                                            </form>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" class="text-slate-600 dark:text-white block font-Inter font-normal px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-600
+                                                dark:hover:text-white">
+
+                                                                Aceptar</a>
+                                                        </li>
+                                                    </ul>
                                                 </div>
-                                            </form>
                                             </td>
                                         </tr>
                                     @endforeach

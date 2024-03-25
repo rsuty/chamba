@@ -14,6 +14,13 @@ class ProfileController extends Controller
         $info = User::find($id);
         return view("auth.profile", compact("info"));
     }
+
+    public function show($id)
+    {
+        $user = User::where('id', $id)->firstOrFail();
+        return view('auth.profile', compact('user'));
+    }
+
     public function update(Request $request, $id)
     {
         $user = User::where('id', $id)->firstOrFail();
@@ -29,6 +36,7 @@ class ProfileController extends Controller
         $user->update($validatedData);
         return redirect()->back()->with('success', 'Tu Informacion a sido actualizada');
     }
+
     public function destroy($id)
     {
         $user = User::where('id', $id)->firstOrFail();

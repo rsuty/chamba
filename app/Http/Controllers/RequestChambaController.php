@@ -28,7 +28,7 @@ class RequestChambaController extends Controller
         $client_id = Auth::user()->id;
         $query = RequestChamba::where('client_id', $client_id)->count();
         if ($query > 0) {
-            return redirect()->back()->with('error', 'You already have a request');
+            return redirect()->back()->with('errors', 'You already have a request');
         } else {
             $requestChamba = new RequestChamba();
             $requestChamba->client_id = $client_id;

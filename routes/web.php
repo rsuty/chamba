@@ -27,6 +27,7 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'profile', 'middleware' => 'auth'], function () {
     Route::get('/', [ProfileController::class, 'index'])->name('profile.index');
+    Route::get('/{user}', [ProfileController::class, 'show'])->name('profile.show');
     Route::put('/{user}/update', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('{user}/destroy', [ProfileController::class, 'delete'])->name('profile.destroy');
 });
@@ -44,5 +45,5 @@ Route::group(['prefix' => 'chamba', 'middleware' => 'auth'], function () {
 Route::group(['prefix' => 'request', 'middleware' => 'auth'], function () {
     Route::get('/', [RequestChambaController::class, 'index'])->name('request.index');
     Route::post('/store', [RequestChambaController::class, 'store'])->name('request.store');
-    Route::delete('/{id}/decline', [RequestChambaController::class, 'decline'])->name('request.decline');
+    Route::put('/{id}/decline', [RequestChambaController::class, 'decline'])->name('request.decline');
 });
